@@ -9,188 +9,206 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #F7F6F3;
-  --surface: #EFEFEB;
-  --card: #FFFFFF;
-  --border: #E2E0DA;
-  --ink: #111111;
-  --mid: #666660;
-  --dim: #AAAAAA;
-  --accent: #1B4FD8;
-  --accent-bg: #EEF2FF;
-  --accent-border: #C7D2FE;
-  --green: #16A34A;
-  --green-bg: #F0FDF4;
+  --bg:#F7F6F3; --surface:#EFEFEB; --card:#FFFFFF; --border:#E2E0DA;
+  --ink:#111111; --mid:#666660; --dim:#AAAAAA;
+  --accent:#1B4FD8; --accent-bg:#EEF2FF; --accent-border:#C7D2FE;
+  --green:#16A34A; --green-bg:#F0FDF4;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { font-family:'Bricolage Grotesque',sans-serif; background:var(--bg); color:var(--ink); font-size:15px; line-height:1.6; overflow-x:hidden; }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Bricolage Grotesque',sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.6;overflow-x:hidden;}
 
 /* NAV */
-nav {
-  position:fixed; top:0; left:0; right:0; z-index:100;
-  display:flex; justify-content:space-between; align-items:center;
-  padding:16px 56px;
-  background:rgba(247,246,243,0.92); backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-}
-.logo { font-size:15px; font-weight:700; color:var(--ink); text-decoration:none; display:flex; align-items:center; gap:8px; }
-.logo-dot { width:8px; height:8px; background:var(--green); border-radius:50%; animation:pulse 2s infinite; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-.nav-links { display:flex; gap:28px; list-style:none; }
-.nav-links a { font-size:13px; font-weight:500; color:var(--mid); text-decoration:none; transition:color 0.2s; }
-.nav-links a:hover { color:var(--ink); }
-.nav-cta { background:var(--ink); color:#fff !important; padding:8px 20px; border-radius:100px; font-weight:700 !important; }
-.nav-cta:hover { background:var(--accent) !important; }
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 56px;background:rgba(247,246,243,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.logo{font-size:15px;font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px;}
+.logo-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--mid);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{background:var(--ink);color:#fff !important;padding:8px 20px;border-radius:100px;font-weight:700 !important;}
+.nav-cta:hover{background:var(--accent) !important;}
 
 /* HERO */
-.hero {
-  min-height:100vh; display:flex; align-items:center;
-  padding:100px 56px 60px; max-width:1100px; margin:0 auto;
-  gap:60px;
-}
-.hero-left { flex:1; }
-.hero-right { flex-shrink:0; }
-.available-badge {
-  display:inline-flex; align-items:center; gap:7px;
-  background:var(--green-bg); border:1px solid #BBF7D0;
-  color:var(--green); font-size:12px; font-weight:600;
-  padding:5px 14px; border-radius:100px; margin-bottom:24px;
-}
-.available-dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation:pulse 2s infinite; }
-.hero h1 {
-  font-size:clamp(36px,5.5vw,68px); font-weight:800;
-  line-height:1.08; letter-spacing:-2px; margin-bottom:20px;
-}
-.hero h1 .serif { font-family:'Lora',serif; font-style:italic; font-weight:400; color:var(--accent); }
-.hero-sub { font-size:17px; color:var(--mid); max-width:460px; line-height:1.75; margin-bottom:32px; font-weight:300; }
-.hero-btns { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:44px; }
-.btn-dark { background:var(--ink); color:#fff; padding:12px 26px; border-radius:100px; font-size:14px; font-weight:700; text-decoration:none; transition:background 0.2s,transform 0.15s; }
-.btn-dark:hover { background:var(--accent); transform:translateY(-1px); }
-.btn-ghost { border:1.5px solid var(--border); color:var(--mid); padding:12px 26px; border-radius:100px; font-size:14px; font-weight:500; text-decoration:none; transition:border-color 0.2s,color 0.2s; }
-.btn-ghost:hover { border-color:var(--ink); color:var(--ink); }
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 56px 60px;max-width:1100px;margin:0 auto;gap:60px;}
+.hero-left{flex:1;min-width:0;}
+.hero-right{flex-shrink:0;}
+.available-badge{display:inline-flex;align-items:center;gap:7px;background:var(--green-bg);border:1px solid #BBF7D0;color:var(--green);font-size:12px;font-weight:600;padding:5px 14px;border-radius:100px;margin-bottom:24px;}
+.available-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+.hero h1{font-size:clamp(36px,5.5vw,68px);font-weight:800;line-height:1.08;letter-spacing:-2px;margin-bottom:20px;}
+.hero h1 .serif{font-family:'Lora',serif;font-style:italic;font-weight:400;color:var(--accent);}
+.hero-sub{font-size:17px;color:var(--mid);max-width:460px;line-height:1.75;margin-bottom:32px;font-weight:300;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;}
+.btn-dark{background:var(--ink);color:#fff;padding:12px 26px;border-radius:100px;font-size:14px;font-weight:700;text-decoration:none;transition:background 0.2s,transform 0.15s;}
+.btn-dark:hover{background:var(--accent);transform:translateY(-1px);}
+.btn-ghost{border:1.5px solid var(--border);color:var(--mid);padding:12px 26px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
+.btn-ghost:hover{border-color:var(--ink);color:var(--ink);}
 
 /* PHOTO */
-.photo-wrap { position:relative; width:260px; height:280px; }
-.photo-wrap img {
-  width:100%; height:100%; object-fit:cover; object-position:top;
-  border-radius:20px; border:3px solid var(--border);
-  display:block; position:relative; z-index:1;
-}
-.photo-badge {
-  position:absolute; bottom:-14px; left:50%; transform:translateX(-50%);
-  background:var(--card); border:1px solid var(--border);
-  border-radius:100px; padding:8px 16px; z-index:2;
-  display:flex; align-items:center; gap:8px;
-  white-space:nowrap; box-shadow:0 4px 16px rgba(0,0,0,0.08);
-}
-.photo-badge-text { font-size:12px; font-weight:600; color:var(--ink); }
-.photo-badge-sub { font-size:11px; color:var(--dim); }
-.photo-dot-grid {
-  position:absolute; top:-16px; right:-16px;
-  width:80px; height:80px;
-  background-image: radial-gradient(circle, var(--border) 1.5px, transparent 1.5px);
-  background-size: 12px 12px;
-  border-radius:8px; z-index:0;
-}
+.photo-wrap{position:relative;width:260px;height:280px;}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:20px;border:3px solid var(--border);display:block;position:relative;z-index:1;}
+.photo-badge{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--border);border-radius:100px;padding:8px 16px;z-index:2;display:flex;align-items:center;gap:8px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,0.08);}
+.photo-badge-text{font-size:12px;font-weight:600;color:var(--ink);}
+.photo-badge-sub{font-size:11px;color:var(--dim);}
+.photo-dot-grid{position:absolute;top:-16px;right:-16px;width:80px;height:80px;background-image:radial-gradient(circle,var(--border) 1.5px,transparent 1.5px);background-size:12px 12px;border-radius:8px;z-index:0;}
 
 /* STAT STRIP */
-.stat-strip { display:flex; border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--card); }
-.stat-item { flex:1; padding:20px 24px; border-right:1px solid var(--border); }
-.stat-item:last-child { border-right:none; }
-.stat-n { font-size:30px; font-weight:800; color:var(--ink); letter-spacing:-1.5px; line-height:1; margin-bottom:3px; }
-.stat-n span { color:var(--accent); }
-.stat-l { font-size:11px; color:var(--dim); font-weight:500; letter-spacing:0.2px; }
+.stat-strip{display:flex;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--card);}
+.stat-item{flex:1;padding:20px 24px;border-right:1px solid var(--border);}
+.stat-item:last-child{border-right:none;}
+.stat-n{font-size:30px;font-weight:800;color:var(--ink);letter-spacing:-1.5px;line-height:1;margin-bottom:3px;}
+.stat-n span{color:var(--accent);}
+.stat-l{font-size:11px;color:var(--dim);font-weight:500;}
 
 /* SECTIONS */
-.wrap { max-width:1100px; margin:0 auto; padding:72px 56px; }
-.sec-label { font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--dim); margin-bottom:40px; display:flex; align-items:center; gap:10px; }
-.sec-label::before { content:''; width:24px; height:1.5px; background:var(--dim); }
-hr.divider { border:none; border-top:1px solid var(--border); }
+.wrap{max-width:1100px;margin:0 auto;padding:72px 56px;}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:40px;display:flex;align-items:center;gap:10px;}
+.sec-label::before{content:'';width:24px;height:1.5px;background:var(--dim);}
+hr.divider{border:none;border-top:1px solid var(--border);}
 
-/* RESULTS */
-.project-card { background:var(--card); border:1px solid var(--border); border-radius:20px; overflow:hidden; margin-bottom:14px; transition:border-color 0.2s,box-shadow 0.2s; }
-.project-card:hover { border-color:#C7C7C0; box-shadow:0 4px 24px rgba(0,0,0,0.06); }
-.project-top { display:flex; justify-content:space-between; align-items:flex-start; padding:26px 28px 16px; gap:20px; }
-.project-badge { display:inline-block; background:var(--accent-bg); color:var(--accent); font-size:10px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; padding:4px 10px; border-radius:100px; margin-bottom:8px; border:1px solid var(--accent-border); }
-.project-title { font-size:20px; font-weight:700; color:var(--ink); letter-spacing:-0.4px; margin-bottom:7px; }
-.project-desc { font-size:13.5px; color:var(--mid); max-width:460px; line-height:1.65; }
-.project-numbers { display:flex; gap:20px; flex-shrink:0; flex-wrap:wrap; }
-.pnum-item { text-align:right; }
-.pnum-n { font-size:24px; font-weight:800; color:var(--ink); letter-spacing:-0.8px; line-height:1; }
-.pnum-n.accent { color:var(--accent); }
-.pnum-l { font-size:11px; color:var(--dim); margin-top:2px; }
-.project-img { width:100%; height:auto; display:block; border-top:1px solid var(--border); }
-.project-tags { padding:12px 28px 18px; display:flex; gap:7px; flex-wrap:wrap; }
-.ptag { font-size:11px; font-weight:600; padding:4px 11px; border-radius:100px; background:var(--surface); color:var(--mid); border:1px solid var(--border); }
+/* PROJECTS */
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:14px;transition:border-color 0.2s,box-shadow 0.2s;}
+.project-card:hover{border-color:#C7C7C0;box-shadow:0 4px 24px rgba(0,0,0,0.06);}
+.project-top{display:flex;justify-content:space-between;align-items:flex-start;padding:26px 28px 16px;gap:20px;}
+.project-badge{display:inline-block;background:var(--accent-bg);color:var(--accent);font-size:10px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:4px 10px;border-radius:100px;margin-bottom:8px;border:1px solid var(--accent-border);}
+.project-title{font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-0.4px;margin-bottom:7px;}
+.project-desc{font-size:13.5px;color:var(--mid);line-height:1.65;}
+.project-numbers{display:flex;gap:20px;flex-shrink:0;}
+.pnum-item{text-align:right;}
+.pnum-n{font-size:24px;font-weight:800;color:var(--ink);letter-spacing:-0.8px;line-height:1;}
+.pnum-n.accent{color:var(--accent);}
+.pnum-l{font-size:11px;color:var(--dim);margin-top:2px;}
+.project-img{width:100%;height:auto;display:block;border-top:1px solid var(--border);}
+.project-tags{padding:12px 28px 18px;display:flex;gap:7px;flex-wrap:wrap;}
+.ptag{font-size:11px;font-weight:600;padding:4px 11px;border-radius:100px;background:var(--surface);color:var(--mid);border:1px solid var(--border);}
 
-/* WHY CHOOSE ME */
-.why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-.why-card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px 22px; transition:border-color 0.2s,transform 0.15s; }
-.why-card:hover { border-color:var(--accent-border); transform:translateY(-2px); }
-.why-icon { font-size:28px; margin-bottom:14px; }
-.why-title { font-size:16px; font-weight:700; color:var(--ink); margin-bottom:8px; letter-spacing:-0.3px; }
-.why-desc { font-size:13.5px; color:var(--mid); line-height:1.65; }
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px 22px;transition:border-color 0.2s,transform 0.15s;}
+.why-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.why-icon{font-size:28px;margin-bottom:14px;}
+.why-title{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.why-desc{font-size:13.5px;color:var(--mid);line-height:1.65;}
 
 /* SERVICES */
-.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:16px; overflow:hidden; }
-.svc-card { background:var(--card); padding:26px 22px; transition:background 0.2s; }
-.svc-card:hover { background:var(--accent-bg); }
-.svc-icon { font-size:22px; margin-bottom:12px; }
-.svc-title { font-size:15px; font-weight:700; color:var(--ink); margin-bottom:7px; }
-.svc-desc { font-size:13px; color:var(--mid); line-height:1.65; }
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.svc-card{background:var(--card);padding:26px 22px;transition:background 0.2s;}
+.svc-card:hover{background:var(--accent-bg);}
+.svc-icon{font-size:22px;margin-bottom:12px;}
+.svc-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:7px;}
+.svc-desc{font-size:13px;color:var(--mid);line-height:1.65;}
 
 /* ABOUT */
-.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
-.about-text { font-size:15.5px; color:var(--mid); line-height:1.8; font-weight:300; }
-.about-text p { margin-bottom:16px; }
-.about-text strong { color:var(--ink); font-weight:600; }
-.about-facts { border:1px solid var(--border); border-radius:16px; overflow:hidden; background:var(--card); }
-.fact-row { display:flex; justify-content:space-between; padding:14px 20px; border-bottom:1px solid var(--border); font-size:13.5px; }
-.fact-row:last-child { border-bottom:none; }
-.fact-k { color:var(--dim); }
-.fact-v { color:var(--ink); font-weight:600; }
-.green-v { color:var(--green); }
-
-/* SKILLS */
-.skills-wrap { display:flex; flex-wrap:wrap; gap:9px; margin-top:24px; }
-.skill-chip { padding:7px 15px; border:1.5px solid var(--border); border-radius:100px; font-size:13px; color:var(--mid); background:var(--card); transition:border-color 0.2s,color 0.2s; }
-.skill-chip:hover { border-color:var(--accent); color:var(--accent); }
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.about-text{font-size:15.5px;color:var(--mid);line-height:1.8;font-weight:300;}
+.about-text p{margin-bottom:16px;}
+.about-text strong{color:var(--ink);font-weight:600;}
+.about-facts{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--card);}
+.fact-row{display:flex;justify-content:space-between;align-items:flex-start;padding:13px 18px;border-bottom:1px solid var(--border);font-size:13px;gap:12px;}
+.fact-row:last-child{border-bottom:none;}
+.fact-k{color:var(--dim);white-space:nowrap;}
+.fact-v{color:var(--ink);font-weight:600;text-align:right;}
+.green-v{color:var(--green);}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px;}
+.skill-chip{padding:7px 15px;border:1.5px solid var(--border);border-radius:100px;font-size:13px;color:var(--mid);background:var(--card);transition:border-color 0.2s,color 0.2s;}
+.skill-chip:hover{border-color:var(--accent);color:var(--accent);}
 
 /* CONTACT */
-.contact-box { background:var(--ink); border-radius:24px; padding:60px 56px; text-align:center; position:relative; overflow:hidden; }
-.contact-box::before { content:''; position:absolute; top:-60px; left:50%; transform:translateX(-50%); width:500px; height:300px; background:radial-gradient(ellipse, rgba(96,130,250,0.15) 0%, transparent 70%); pointer-events:none; }
-.contact-box h2 { font-size:clamp(26px,4vw,46px); font-weight:800; letter-spacing:-1.5px; color:#fff; margin-bottom:12px; }
-.contact-box p { font-size:16px; color:#888; margin-bottom:36px; font-weight:300; }
-.contact-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-.btn-white { background:#fff; color:var(--ink); padding:12px 28px; border-radius:100px; font-size:14px; font-weight:700; text-decoration:none; transition:opacity 0.2s,transform 0.15s; }
-.btn-white:hover { opacity:0.9; transform:translateY(-1px); }
-.btn-outline { border:1.5px solid #333; color:#888; padding:12px 28px; border-radius:100px; font-size:14px; font-weight:500; text-decoration:none; transition:border-color 0.2s,color 0.2s; }
-.btn-outline:hover { border-color:#666; color:#ccc; }
+.contact-box{background:var(--ink);border-radius:24px;padding:60px 56px;text-align:center;position:relative;overflow:hidden;}
+.contact-box::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(96,130,250,0.15) 0%,transparent 70%);pointer-events:none;}
+.contact-box h2{font-size:clamp(26px,4vw,46px);font-weight:800;letter-spacing:-1.5px;color:#fff;margin-bottom:12px;}
+.contact-box p{font-size:16px;color:#888;margin-bottom:36px;font-weight:300;}
+.contact-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-white{background:#fff;color:var(--ink);padding:12px 28px;border-radius:100px;font-size:14px;font-weight:700;text-decoration:none;transition:opacity 0.2s,transform 0.15s;}
+.btn-white:hover{opacity:0.9;transform:translateY(-1px);}
+.btn-outline{border:1.5px solid #333;color:#888;padding:12px 28px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
+.btn-outline:hover{border-color:#666;color:#ccc;}
 
 /* FOOTER */
-.footer-wrap { max-width:1100px; margin:0 auto; padding:24px 56px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border); }
-.footer-wrap p { font-size:13px; color:var(--dim); }
-.footer-links { display:flex; gap:20px; }
-.footer-links a { font-size:13px; color:var(--dim); text-decoration:none; transition:color 0.2s; }
-.footer-links a:hover { color:var(--ink); }
+.footer-wrap{max-width:1100px;margin:0 auto;padding:24px 56px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
+.footer-wrap p{font-size:13px;color:var(--dim);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:13px;color:var(--dim);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--ink);}
 
 /* FADE */
-.fade { opacity:0; transform:translateY(18px); transition:opacity 0.6s ease,transform 0.6s ease; }
-.fade.in { opacity:1; transform:translateY(0); }
+.fade{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade.in{opacity:1;transform:translateY(0);}
 
-@media(max-width:760px) {
-  nav { padding:14px 20px; } .nav-links { display:none; }
-  .hero { flex-direction:column-reverse; padding:90px 20px 50px; gap:32px; }
-  .hero-right { display:flex; justify-content:center; }
-  .photo-wrap { width:200px; height:220px; }
-  .wrap { padding:56px 20px; }
-  .stat-strip { flex-wrap:wrap; }
-  .stat-item { min-width:50%; border-bottom:1px solid var(--border); }
-  .why-grid,.services-grid { grid-template-columns:1fr; }
-  .about-grid { grid-template-columns:1fr; }
-  .contact-box { padding:40px 24px; }
-  .footer-wrap { flex-direction:column; gap:14px; text-align:center; }
+/* ── MOBILE ── */
+@media(max-width:768px){
+
+  /* NAV */
+  nav{padding:14px 18px;}
+  .nav-links{display:none;}
+
+  /* HERO */
+  .hero{flex-direction:column-reverse;padding:82px 18px 48px;gap:24px;min-height:auto;}
+  .hero-left{width:100%;}
+  .hero-right{display:flex;justify-content:center;width:100%;}
+  .photo-wrap{width:160px;height:175px;}
+  .photo-dot-grid{display:none;}
+  .photo-badge{padding:6px 12px;}
+  .photo-badge-text{font-size:11px;}
+  .photo-badge-sub{font-size:10px;}
+  .hero h1{font-size:36px;letter-spacing:-1.5px;}
+  .hero-sub{font-size:14px;max-width:100%;}
+  .hero-btns{margin-bottom:28px;}
+  .btn-dark,.btn-ghost{padding:11px 20px;font-size:13px;}
+
+  /* STAT STRIP */
+  .stat-strip{display:grid;grid-template-columns:1fr 1fr;border-radius:12px;}
+  .stat-item{padding:14px 16px;border-right:none;border-bottom:1px solid var(--border);}
+  .stat-item:nth-child(1),.stat-item:nth-child(3){border-right:1px solid var(--border);}
+  .stat-item:nth-child(3),.stat-item:nth-child(4){border-bottom:none;}
+  .stat-n{font-size:22px;}
+  .stat-l{font-size:10px;}
+
+  /* WRAP */
+  .wrap{padding:44px 18px;}
+  .sec-label{margin-bottom:24px;font-size:10px;}
+
+  /* PROJECT CARDS */
+  .project-top{flex-direction:column;gap:14px;padding:16px 16px 10px;}
+  .project-numbers{flex-direction:row;justify-content:flex-start;gap:18px;}
+  .pnum-item{text-align:left;}
+  .pnum-n{font-size:19px;}
+  .pnum-l{font-size:10px;}
+  .project-title{font-size:16px;}
+  .project-desc{font-size:12.5px;}
+  .project-tags{padding:10px 16px 14px;gap:5px;}
+  .ptag{font-size:10px;padding:3px 8px;}
+
+  /* WHY */
+  .why-grid{grid-template-columns:1fr;gap:10px;}
+  .why-card{padding:20px 16px;}
+  .why-icon{font-size:22px;margin-bottom:10px;}
+  .why-title{font-size:14px;}
+  .why-desc{font-size:12.5px;}
+
+  /* SERVICES */
+  .services-grid{grid-template-columns:1fr;gap:1px;}
+  .svc-card{padding:20px 16px;}
+  .svc-icon{font-size:20px;margin-bottom:10px;}
+  .svc-title{font-size:14px;}
+  .svc-desc{font-size:12.5px;}
+
+  /* ABOUT */
+  .about-grid{grid-template-columns:1fr;gap:24px;}
+  .about-text{font-size:14px;}
+  .fact-row{padding:11px 14px;font-size:12.5px;}
+  .skills-wrap{gap:7px;}
+  .skill-chip{font-size:12px;padding:6px 12px;}
+
+  /* CONTACT */
+  .contact-box{padding:36px 18px;border-radius:18px;}
+  .contact-box h2{font-size:26px;letter-spacing:-1px;}
+  .contact-box p{font-size:14px;margin-bottom:24px;}
+  .contact-btns{flex-direction:column;align-items:stretch;}
+  .btn-white,.btn-outline{text-align:center;padding:13px 20px;}
+
+  /* FOOTER */
+  .footer-wrap{flex-direction:column;gap:12px;text-align:center;padding:20px 18px;}
 }
 </style>
 </head>
@@ -206,7 +224,6 @@ hr.divider { border:none; border-top:1px solid var(--border); }
   </ul>
 </nav>
 
-<!-- HERO -->
 <div style="max-width:1100px;margin:0 auto;">
 <div class="hero">
   <div class="hero-left">
@@ -241,7 +258,6 @@ hr.divider { border:none; border-top:1px solid var(--border); }
 
 <hr class="divider">
 
-<!-- RESULTS -->
 <div class="wrap" id="results">
   <div class="sec-label fade">Real Results</div>
 
@@ -269,7 +285,7 @@ hr.divider { border:none; border-top:1px solid var(--border); }
       <div class="project-meta">
         <div class="project-badge">🇺🇸 Tier-1 Traffic · Pet Care Niche</div>
         <div class="project-title">Tier-1 Traffic from Bing — Built from Scratch</div>
-        <div class="project-desc">Built this site from zero — custom WordPress theme, 26+ interactive tools, full SEO strategy. Now pulling consistent US/UK/CA traffic through Bing with a strong upward trend month over month.</div>
+        <div class="project-desc">Built this site from zero — custom WordPress theme, 26+ interactive tools, full SEO strategy. Now pulling consistent US/UK/CA traffic through Bing with a strong upward trend.</div>
       </div>
       <div class="project-numbers">
         <div class="pnum-item"><div class="pnum-n accent">328K</div><div class="pnum-l">Impressions</div></div>
@@ -286,9 +302,9 @@ hr.divider { border:none; border-top:1px solid var(--border); }
   <div class="project-card fade">
     <div class="project-top">
       <div class="project-meta">
-        <div class="project-badge">🇺🇦 Ukrainian Market · Fashion & Beauty</div>
+        <div class="project-badge">🌍 International Market · Fashion & Beauty</div>
         <div class="project-title">Breaking into a Competitive Foreign SERP</div>
-        <div class="project-desc">Targeting the Ukrainian fashion and beauty market from scratch. Built the full keyword strategy and content pipeline. Only 6 months in — visibility and clicks trending up consistently.</div>
+        <div class="project-desc">Targeting a foreign fashion and beauty market from scratch. Built the full keyword strategy and content pipeline. Only 6 months in — visibility and clicks trending up consistently.</div>
       </div>
       <div class="project-numbers">
         <div class="pnum-item"><div class="pnum-n accent">8.22K</div><div class="pnum-l">Impressions</div></div>
@@ -299,58 +315,32 @@ hr.divider { border:none; border-top:1px solid var(--border); }
     <div class="project-tags">
       <span class="ptag">Multilingual SEO</span><span class="ptag">Keyword Research</span><span class="ptag">Competitor Analysis</span><span class="ptag">Content Pipeline</span>
     </div>
-    <img src="img3.jpg" alt="GSC Performance - Ukrainian Fashion Blog" class="project-img">
+    <img src="img3.jpg" alt="GSC Performance - Fashion Blog" class="project-img">
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- WHY CHOOSE ME -->
 <div class="wrap" id="why">
   <div class="sec-label fade">Why Choose Me</div>
   <div class="why-grid fade">
-    <div class="why-card">
-      <div class="why-icon">🎯</div>
-      <div class="why-title">One-Man Army</div>
-      <div class="why-desc">I handle strategy, execution, and reporting myself. No account managers passing your work to juniors. You deal directly with the person doing the work.</div>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">📊</div>
-      <div class="why-title">Results You Can See</div>
-      <div class="why-desc">I show real GSC screenshots, not vague claims. Every project I take on, I track and report with full transparency — traffic, rankings, and what's actually moving.</div>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">🌍</div>
-      <div class="why-title">Multi-Market Experience</div>
-      <div class="why-desc">I've ranked sites in English, Ukrainian, and other competitive markets. Whether you're local or international, I understand how different SERPs behave.</div>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">⚡</div>
-      <div class="why-title">Fast Execution</div>
-      <div class="why-desc">I use AI tools to work faster — content pipelines, automation, keyword research. You get agency-level output at a fraction of the time and cost.</div>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">🔧</div>
-      <div class="why-title">Technical + Strategic</div>
-      <div class="why-desc">Most SEO people are either technical or content-focused. I do both — from fixing GSC errors and schema to building full content strategies that convert.</div>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">🤝</div>
-      <div class="why-title">No Fluff, Just Work</div>
-      <div class="why-desc">I don't oversell or hide behind jargon. I tell you what I'll do, I do it, and I show you the results. Simple as that.</div>
-    </div>
+    <div class="why-card"><div class="why-icon">🎯</div><div class="why-title">One-Man Army</div><div class="why-desc">I handle strategy, execution, and reporting myself. No account managers passing your work to juniors. You deal directly with the person doing the work.</div></div>
+    <div class="why-card"><div class="why-icon">📊</div><div class="why-title">Results You Can See</div><div class="why-desc">I show real GSC screenshots, not vague claims. Every project I take on, I track and report with full transparency — traffic, rankings, and what's actually moving.</div></div>
+    <div class="why-card"><div class="why-icon">🌍</div><div class="why-title">Multi-Market Experience</div><div class="why-desc">I've ranked sites across multiple international markets. Whether you're local or global, I understand how different SERPs behave and what it takes to win in them.</div></div>
+    <div class="why-card"><div class="why-icon">🧠</div><div class="why-title">Problem Solver First</div><div class="why-desc">I don't apply cookie-cutter SEO. I dig into why a site isn't performing, find the real issue, and fix it. Every site has a different problem — I treat it that way.</div></div>
+    <div class="why-card"><div class="why-icon">🔧</div><div class="why-title">Technical + Strategic</div><div class="why-desc">Most SEO people are either technical or content-focused. I do both — from GSC error fixing and schema to full content strategies that convert.</div></div>
+    <div class="why-card"><div class="why-icon">🤝</div><div class="why-title">No Fluff, Just Work</div><div class="why-desc">I don't oversell or hide behind jargon. I tell you what I'll do, I do it, and I show you the results. Simple as that.</div></div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- SERVICES -->
 <div class="wrap" id="services">
   <div class="sec-label fade">What I Do</div>
   <div class="services-grid fade">
     <div class="svc-card"><div class="svc-icon">🔍</div><div class="svc-title">Technical SEO</div><div class="svc-desc">Full audits, GSC error fixing, schema, crawlability, and site speed — everything under the hood that affects rankings.</div></div>
     <div class="svc-card"><div class="svc-icon">📝</div><div class="svc-title">Content Strategy</div><div class="svc-desc">Keyword research, competitor gap analysis, and editorial pipelines that consistently capture and convert search demand.</div></div>
-    <div class="svc-card"><div class="svc-icon">🔗</div><div class="svc-title">Off-Page & Link Building</div><div class="svc-desc">Guest posting, outreach, spammy backlink disavow, and authority building that actually moves the needle.</div></div>
+    <div class="svc-card"><div class="svc-icon">🔗</div><div class="svc-title">Off-Page & Link Building</div><div class="svc-desc">Guest posting, outreach, backlink disavow, and authority building that actually moves the needle.</div></div>
     <div class="svc-card"><div class="svc-icon">📊</div><div class="svc-title">SEO Audits & Reporting</div><div class="svc-desc">Clear monthly reports tracking rankings, traffic, and conversions — no fluff, just what matters to your business.</div></div>
     <div class="svc-card"><div class="svc-icon">🔁</div><div class="svc-title">On-Page SEO</div><div class="svc-desc">Deep on-page optimisation including title tags, heading structure, and advanced internal linking strategies that distribute authority and guide crawlers to your most important pages.</div></div>
     <div class="svc-card"><div class="svc-icon">⚙️</div><div class="svc-title">WordPress SEO & Maintenance</div><div class="svc-desc">Custom SEO configurations, speed optimisation, Core Web Vitals fixes, plugin setup (Rank Math/Yoast), and ongoing maintenance — so your site stays fast, healthy, and ranking.</div></div>
@@ -359,16 +349,15 @@ hr.divider { border:none; border-top:1px solid var(--border); }
 
 <hr class="divider">
 
-<!-- ABOUT -->
 <div class="wrap" id="about">
   <div class="sec-label fade">About Me</div>
   <div class="about-grid fade">
     <div>
-      <p class="about-text">
+      <div class="about-text">
         <p>I'm Anis — an SEO specialist based in Islamabad, Pakistan with <strong>8 years of hands-on experience</strong> growing websites and running campaigns across multiple international markets.</p>
         <p>My core strength is <strong>problem solving</strong>. I don't apply cookie-cutter SEO — I dig into why a site isn't performing, find the real issue, and fix it. That mindset has served me across technical audits, content strategy, and site recoveries.</p>
         <p>I've worked independently, with business partners on joint ventures, and previously managed a <strong>remote blogging team</strong>. I also build things — custom WordPress themes, tools, and AI workflows — so I understand the technical side from the inside out.</p>
-      </p>
+      </div>
       <div class="skills-wrap">
         <span class="skill-chip">Technical SEO</span>
         <span class="skill-chip">On-Page SEO</span>
@@ -380,21 +369,20 @@ hr.divider { border:none; border-top:1px solid var(--border); }
         <span class="skill-chip">Ahrefs / Semrush / GSC</span>
         <span class="skill-chip">Google AdSense</span>
         <span class="skill-chip">WordPress</span>
-        <span class="skill-chip">AI Tools</span>
-        <span class="skill-chip">Make.com Automation</span>
         <span class="skill-chip">Shopify SEO</span>
-        <span class="skill-chip">GEO (Generative Engine Optimisation)</span>
+        <span class="skill-chip">GEO</span>
         <span class="skill-chip">Quality Content Production</span>
+        <span class="skill-chip">AI Tools</span>
         <span class="skill-chip">Graphic Design</span>
       </div>
     </div>
     <div class="about-facts">
       <div class="fact-row"><span class="fact-k">Location</span><span class="fact-v">Islamabad, Pakistan</span></div>
       <div class="fact-row"><span class="fact-k">Experience</span><span class="fact-v">8 Years</span></div>
-      <div class="fact-row"><span class="fact-k">Speciality</span><span class="fact-v">Technical & Off-Page SEO</span></div>
-      <div class="fact-row"><span class="fact-k">Client Projects</span><span class="fact-v">60+ completed</span></div>
-      <div class="fact-row"><span class="fact-k">Markets</span><span class="fact-v">English, Ukrainian, Global</span></div>
-      <div class="fact-row"><span class="fact-k">Tools</span><span class="fact-v">Ahrefs, Semrush, GSC, GA4, Screaming Frog, Rank Math, Yoast, PageSpeed Insights, Bing Webmaster Tools, Moz</span></div>
+      <div class="fact-row"><span class="fact-k">Speciality</span><span class="fact-v">Technical & On-Page SEO</span></div>
+      <div class="fact-row"><span class="fact-k">Projects</span><span class="fact-v">60+ completed</span></div>
+      <div class="fact-row"><span class="fact-k">Markets</span><span class="fact-v">Multiple International</span></div>
+      <div class="fact-row"><span class="fact-k">Tools</span><span class="fact-v">Ahrefs, Semrush, GSC, GA4, Screaming Frog, Rank Math, Yoast, PageSpeed Insights, Moz</span></div>
       <div class="fact-row"><span class="fact-k">Availability</span><span class="fact-v green-v">● Open to projects</span></div>
       <div class="fact-row"><span class="fact-k">Email</span><span class="fact-v">syedanisimran@gmail.com</span></div>
     </div>
@@ -403,7 +391,6 @@ hr.divider { border:none; border-top:1px solid var(--border); }
 
 <hr class="divider">
 
-<!-- CONTACT -->
 <div class="wrap" id="contact" style="padding-top:0">
   <div class="contact-box fade">
     <h2>Let's grow your traffic.</h2>
@@ -425,8 +412,8 @@ hr.divider { border:none; border-top:1px solid var(--border); }
 
 <script>
 const io = new IntersectionObserver(entries => {
-  entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('in'), i*70); });
-}, { threshold:0.08 });
+  entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('in'),i*70); });
+},{threshold:0.08});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
 </script>
 </body>
